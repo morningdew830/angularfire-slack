@@ -1,10 +1,9 @@
-/**
- * Created by Coder on 11/10/2016.
- */
 
-angular.module('angularfireSlackApp')
+angular
+  .module('angularfireSlackApp', ['firebase'])
   .factory('Auth', function($firebaseAuth, FirebaseUrl) {
-    var ref = new Firebase(FirebaseUrl);
-    var auth = $firebaseAuth(ref);
-    return auth;
-  });
+		var ref = new Firebase(FirebaseUrl);
+		var auth = $firebaseAuth(ref);
+
+		return auth;
+	});
